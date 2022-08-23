@@ -1,4 +1,4 @@
-import s from "./Contacts.module.css";
+import s from "./AddContact.module.css";
 import React, {ChangeEvent, KeyboardEvent, useState} from "react";
 import {useAppDispatch} from "../../state/hooks";
 import {AddContactAction} from "../../state/actions/contacts-actions";
@@ -24,7 +24,7 @@ export const AddContact = () => {
         } else {
             setValidationError(false)
             if (addName || addPhone !== '') {
-                if (addPhone === ''){
+                if (addPhone === '') {
                     dispatch(AddContactAction(addName, addPhone))
                     setAddContactMode(false)
                     setAddName('')
@@ -59,7 +59,7 @@ export const AddContact = () => {
             {
                 !addContactMode
                     ? <div className={s.addContactButtonWrapper}>
-                        <button className={s.addContactButton} onClick={() => {
+                        <button onClick={() => {
                             setAddContactMode(true)
                         }}>Add contact
                         </button>
@@ -78,9 +78,9 @@ export const AddContact = () => {
                             />
                             <input
                                 placeholder={'phone'}
-                                   onChange={addContactPhoneHandler}
-                                   onKeyPress={onKeyPressHandler}
-                                   value={addPhone}
+                                onChange={addContactPhoneHandler}
+                                onKeyPress={onKeyPressHandler}
+                                value={addPhone}
                             />
                         </div>
                         <div>

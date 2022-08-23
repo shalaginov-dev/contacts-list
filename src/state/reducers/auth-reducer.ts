@@ -5,7 +5,7 @@ let initialState: InitialAuthType = {
     id: null,
     email: null,
     login: null,
-    isAuth: false,
+    isAuth: true,
 }
 
 export const authReducer = (state: InitialAuthType = initialState, action: AuthActionsType): InitialAuthType => {

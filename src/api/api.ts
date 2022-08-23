@@ -8,21 +8,21 @@ export const contactsAPI = {
             res([
                 {
                     id: v1(),
-                    photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN5RUg-hoCXA0WT4IHdHIwCmj9PgXmBoAqEA&usqp=CAU',
+                    photo: 'https://cdn4.vectorstock.com/i/1000x1000/94/38/avatar-flat-icon-on-black-background-black-style-vector-25959438.jpg',
                     name: 'Jim Carrey',
                     phone: '+1012433677',
                     editMode: false,
                 },
                 {
                     id: v1(),
-                    photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN5RUg-hoCXA0WT4IHdHIwCmj9PgXmBoAqEA&usqp=CAU',
+                    photo: 'https://cdn4.vectorstock.com/i/1000x1000/94/38/avatar-flat-icon-on-black-background-black-style-vector-25959438.jpg',
                     name: 'Gabe Newell',
                     phone: '+101217398',
                     editMode: false,
                 },
                 {
                     id: v1(),
-                    photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN5RUg-hoCXA0WT4IHdHIwCmj9PgXmBoAqEA&usqp=CAU',
+                    photo: 'https://cdn4.vectorstock.com/i/1000x1000/94/38/avatar-flat-icon-on-black-background-black-style-vector-25959438.jpg',
                     name: 'Sergey Brin',
                     phone: '+3440237482',
                     editMode: false,

@@ -57,9 +57,7 @@ export const Contacts = (props: ContactsPropsType) => {
     return (
         <div className={s.contactWrapper}>
             <div className={s.userPhotoWrapper}>
-                <img alt={'ava'}
-                     src={props.photo}
-                     className={s.userPhoto}/>
+                <img alt={'ava'} src={props.photo}/>
             </div>
             <div className={s.contactData}>
                 {
@@ -98,9 +96,10 @@ export const Contacts = (props: ContactsPropsType) => {
                         }}>edit
                         </button>
                 }
-                <button className={s.deleteContactButton} onClick={() => {
-                    dispatch(DeleteContactAction(props.id))
-                }}>delete
+                <button
+                    className={`${s.deleteContactButton} ${props.editMode && s.deleteButtonOpacity}`}
+                    onClick={() => {dispatch(DeleteContactAction(props.id))}
+                    }>delete
                 </button>
             </div>
         </div>

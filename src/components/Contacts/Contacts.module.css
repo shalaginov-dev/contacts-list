@@ -24,11 +24,13 @@
     align-items: center;
     border: black 1px solid;
 }
+
 .contactWrapper:not(:last-child) {
     border-bottom: none;
 }
 
-.userPhoto {
+.userPhotoWrapper img {
+    background-color: #efefef;
     width: 40px;
     height: 40px;
     border-radius: 50px 50px;
@@ -49,102 +51,40 @@
 .contactData div:first-child {
     margin-bottom: 5px;
 }
+
 .contactData div:last-child {
     opacity: 50%;
 }
 
-.deleteContactButton,
+
 .editContactButton {
     width: 60px;
     height: 27px;
-    background-color: #879af5;
-    color: #ffffff;
-    border-radius: 5px;
-
+    color: blue;
+    border: 1px blue solid;
+    border-radius: 3px;
 }
 
+.deleteContactButton {
+    width: 60px;
+    height: 27px;
+    color: #da0000;
+    border: 1px #da0000 solid;
+    border-radius: 3px;
+}
+
+.deleteButtonOpacity {
+    opacity: 50%;
+}
 
 .confirmContactButton {
-    background-color: #a9a9a9;
-    color: #ffffff;
-    border-radius: 5px;
+    border: 2px blue solid;
+    color: blue;
+    border-radius: 3px;
     height: 27px;
     width: 60px;
-}
-.addContactWrapper {
-    box-sizing: border-box;
-    box-shadow: 10px 5px 5px #8f8f8f;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 440px;
-    height: 90px;
-    border: black solid 1px;
-    border-radius: 5px;
-    padding: 10px 20px;
-    background-color: #efefef;
-    margin-bottom: 20px;
-}
-.addContactWrapperWOBorder {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 440px;
-    height: 90px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
-.addContactButtonWrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 440px;
-    height: 90px;
-}
-
-.addFormWrapper {
-    position: relative;
-    display: flex;
-    border-radius: 5px;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 440px;
-    height: 90px;
-}
-
-.addFormWrapper div {
-    display: flex;
-    flex-direction: column;
-}
-
-.addFormWrapper button {
-    background-color: #879af5;
-    color: #ffffff;
-    border-radius: 5px;
-    height: 27px;
-    width: 60px;
-}
-.addFormWrapper div:first-child {
-    display: flex;
-    justify-content: space-around;
-    height: 50px;
-}
-
-.addContactButton{
-    background-color: #879af5;
-    color: #ffffff;
-    border-radius: 5px;
-    width: 100px;
-    height: 30px;
-}
-.validationError {
-    position: absolute;
-    top: 6%;
-    color: red;
-    font-size: 11px;
-    opacity: 70%;
-    font-weight: 700;
+    font-weight: 400;
+    font-size: 12px;
 }
 
 .validationErrorEdit {
@@ -156,4 +96,3 @@
     opacity: 70%;
     font-weight: 700;
 }
-
