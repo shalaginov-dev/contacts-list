@@ -13,6 +13,7 @@
 
 .contactWrapper {
     box-sizing: border-box;
+    box-shadow: 10px 5px 5px #8f8f8f;
     width: 440px;
     height: 90px;
     background-color: #efefef;
@@ -22,6 +23,9 @@
     justify-content: space-between;
     align-items: center;
     border: black 1px solid;
+}
+.contactWrapper:not(:last-child) {
+    border-bottom: none;
 }
 
 .userPhoto {
@@ -69,6 +73,7 @@
 }
 .addContactWrapper {
     box-sizing: border-box;
+    box-shadow: 10px 5px 5px #8f8f8f;
     display: flex;
     justify-content: center;
     align-items: center;
