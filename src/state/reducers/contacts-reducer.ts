@@ -3,33 +3,15 @@ import {ACTIONS_TYPE} from "../types/action-types";
 import {v1} from "uuid";
 
 const initialState: InitialContactsType = {
-    contacts: [
-        {
-            id: v1(),
-            photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN5RUg-hoCXA0WT4IHdHIwCmj9PgXmBoAqEA&usqp=CAU',
-            name: 'Jim Carrey',
-            phone: '+1012433677',
-            editMode: false,
-        },
-        {
-            id: v1(),
-            photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN5RUg-hoCXA0WT4IHdHIwCmj9PgXmBoAqEA&usqp=CAU',
-            name: 'Gabe Newell',
-            phone: '+101217398',
-            editMode: false,
-        },
-        {
-            id: v1(),
-            photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN5RUg-hoCXA0WT4IHdHIwCmj9PgXmBoAqEA&usqp=CAU',
-            name: 'Sergey Brin',
-            phone: '+3440237482',
-            editMode: false,
-        },
-    ]
+    contacts: []
 }
 
 export const contactsReducer = (state: InitialContactsType = initialState, action: ContactsActionsType): InitialContactsType => {
     switch (action.type) {
+        case ACTIONS_TYPE.SET_CONTACTS:
+            return {
+                ...state, contacts: action.payload.contacts
+            }
         case ACTIONS_TYPE.ADD_CONTACT:
             return {
                 ...state, contacts: [...state.contacts, {

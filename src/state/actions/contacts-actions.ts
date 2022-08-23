@@ -1,5 +1,21 @@
-import {AddContactAT, ChangeContactNameAT, ChangeEditModeAT, DeleteContactAT} from "../types/contacts-types";
+import {
+    AddContactAT,
+    ChangeContactNameAT,
+    ChangeEditModeAT, ContactType,
+    DeleteContactAT,
+    SetContactsAT,
+    ThunkType
+} from "../types/contacts-types";
 import {ACTIONS_TYPE} from "../types/action-types";
+import {contactsAPI} from "../../api/api";
+
+export const SetContacts = (contacts: ContactType[]): SetContactsAT => {
+    return {
+        type: ACTIONS_TYPE.SET_CONTACTS,
+        payload: {contacts}
+    }
+}
+
 
 export const AddContactAction = (name: string, phone: string): AddContactAT => {
     return {
@@ -29,3 +45,13 @@ export const ChangeContactAction = (id: string, name: string, phone: string): Ch
 }
 
 
+export const RequestContacts = (): ThunkType => {
+    return async (dispatch) => {
+        try {
+            const data = await contactsAPI.fetchContacts()
+            dispatch(SetContacts(data))
+        } catch (e){
+
+        }
+    }
+}

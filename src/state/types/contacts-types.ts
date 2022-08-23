@@ -1,4 +1,6 @@
 import {ACTIONS_TYPE} from "./action-types";
+import {ThunkAction} from "redux-thunk";
+import {RootStateType} from "../store";
 
 export type ContactType = {
     id: string
@@ -8,7 +10,7 @@ export type ContactType = {
     editMode: boolean
 }
 export type InitialContactsType = {
-    contacts: Array<ContactType>
+    contacts: ContactType[]
 }
 
 
@@ -40,8 +42,15 @@ export type ChangeEditModeAT = {
         editMode: boolean
     }
 }
+export type SetContactsAT = {
+    type: ACTIONS_TYPE.SET_CONTACTS
+    payload: {
+        contacts: ContactType[]
+    }
+}
 
 
 export type ContactsActionsType =
-    AddContactAT | ChangeContactNameAT | ChangeEditModeAT | DeleteContactAT
+    AddContactAT | ChangeContactNameAT | ChangeEditModeAT | DeleteContactAT | SetContactsAT
 
+export type ThunkType = ThunkAction<Promise<void>, RootStateType, unknown, ContactsActionsType>

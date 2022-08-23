@@ -1,11 +1,11 @@
 import {authAPI} from "../../api/api";
 import {stopSubmit} from "redux-form";
 import {ACTIONS_TYPE} from "../types/action-types";
-import {DataType, SetUserDataAT, ThunkType} from "../types/auth-types";
+import {DataType, SetAuthUserDataAT, ThunkType} from "../types/auth-types";
 
 
-export const SetAuthUserData = (data: DataType, isAuth: boolean): SetUserDataAT => ({
-    type: ACTIONS_TYPE.SET_USER_DATA,
+export const SetAuthUserData = (data: DataType, isAuth: boolean): SetAuthUserDataAT => ({
+    type: ACTIONS_TYPE.SET_AUTH_USER_DATA,
     payload: {data, isAuth},
 })
 

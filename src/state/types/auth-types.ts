@@ -16,10 +16,10 @@ export type DataType = {
     email: string | null
     login: string | null
 }
-export type SetUserDataAT = {
-    type: ACTIONS_TYPE.SET_USER_DATA
+export type SetAuthUserDataAT = {
+    type: ACTIONS_TYPE.SET_AUTH_USER_DATA
     payload: { data: DataType, isAuth: boolean }
 }
 
-export type AuthActionsType = SetUserDataAT | StopSubmitType
+export type AuthActionsType = SetAuthUserDataAT | StopSubmitType
 export type ThunkType = ThunkAction<Promise<void>, RootStateType, unknown, AuthActionsType>

@@ -10,7 +10,7 @@ let initialState: InitialAuthType = {
 
 export const authReducer = (state: InitialAuthType = initialState, action: AuthActionsType): InitialAuthType => {
     switch (action.type) {
-        case ACTIONS_TYPE.SET_USER_DATA:
+        case ACTIONS_TYPE.SET_AUTH_USER_DATA:
             return {
                 ...state,
                 ...action.payload.data,
