@@ -16,7 +16,7 @@ export const contactsReducer = (state: InitialContactsType = initialState, actio
             return {
                 ...state, contacts: [...state.contacts, {
                     id: v1(),
-                    photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN5RUg-hoCXA0WT4IHdHIwCmj9PgXmBoAqEA&usqp=CAU',
+                    photo: 'https://cdn4.vectorstock.com/i/1000x1000/94/38/avatar-flat-icon-on-black-background-black-style-vector-25959438.jpg',
                     name: action.payload.name,
                     phone: action.payload.phone,
                     editMode: false
