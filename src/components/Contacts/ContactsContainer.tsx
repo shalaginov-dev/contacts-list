@@ -1,16 +1,22 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
 import {Contacts} from "./Contacts";
-import {useAppSelector} from "../../state/hooks";
+import {useAppDispatch, useAppSelector} from "../../state/hooks";
 import {contactsPage} from "../../state/selectors";
 import s from "./Contacts.module.css";
 import {AddContact} from "./AddContact";
+import {RequestContacts} from "../../state/actions/contacts-actions";
 
 const ContactsContainer = () => {
+    const dispatch = useAppDispatch()
     const {
         contacts
     } = useAppSelector(contactsPage)
+    useEffect(()=> {
+        dispatch(RequestContacts())
+    },[])
+
     const [search, setSearch] = useState('')
     const onBlurHandler = () => {
         setSearch('')

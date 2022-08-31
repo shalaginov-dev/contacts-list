@@ -1,20 +1,11 @@
-import React, {useEffect} from 'react'
-import {Routes, Route, useNavigate} from 'react-router-dom';
+import React from 'react'
+import {Routes, Route} from 'react-router-dom';
 import './App.css'
 import {LoginContainer} from "./components/Login/LoginContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import ContactsContainer from "./components/Contacts/ContactsContainer";
-import {useAppDispatch} from "./state/hooks";
-import {RequestContacts} from "./state/actions/contacts-actions";
 
 export const App = () => {
-    const navigate = useNavigate()
-    const dispatch = useAppDispatch()
-
-    useEffect(() => {
-        dispatch(RequestContacts())
-        navigate('/login')
-    }, [])
 
     return (
         <div>
@@ -28,7 +19,6 @@ export const App = () => {
                 </div>
             </div>
         </div>
-
     )
 }
 
