@@ -1,25 +1,28 @@
-import React, {useEffect, useState} from "react";
+import React, {ChangeEvent, useEffect, useState} from "react";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
-import {Contacts} from "./Contacts";
+import {Contact} from "./Contact/Contact";
 import {useAppDispatch, useAppSelector} from "../../state/hooks";
 import {contactsPage} from "../../state/selectors";
-import s from "./Contacts.module.css";
-import {AddContact} from "./AddContact";
+import s from "./ContactContainer.module.css";
+import {AddContact} from "./AddContact/AddContact";
 import {RequestContacts} from "../../state/actions/contacts-actions";
+import {Search} from "./Search/Search";
 
-const ContactsContainer = () => {
+const ContactContainer = () => {
     const dispatch = useAppDispatch()
-    const {
-        contacts
-    } = useAppSelector(contactsPage)
-    useEffect(()=> {
-        dispatch(RequestContacts())
-    },[])
-
+    const {contacts} = useAppSelector(contactsPage)
     const [search, setSearch] = useState('')
-    const onBlurHandler = () => {
+
+    useEffect(() => {
+        dispatch(RequestContacts())
+    }, [])
+
+    const searchInputOnBlurHandler = () => {
         setSearch('')
+    }
+    const searchInputOnChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        setSearch(e.currentTarget.value)
     }
 
     const filteredContacts = contacts.filter(c => c.name
@@ -32,20 +35,10 @@ const ContactsContainer = () => {
     return (
         <div className={s.contactPageWrapper}>
             <h1>Contact list</h1>
-            <div className={s.searchInput}>
-                <input
-                    value={search}
-                    placeholder={'search'}
-                    onBlur={onBlurHandler}
-                    onChange={(e) => {
-                        setSearch(e.currentTarget.value)
-                    }}
-                />
-            </div>
-
+            <Search search={search} blurHandler={searchInputOnBlurHandler} changeHandler={searchInputOnChangeHandler}/>
             <AddContact/>
             {
-                filteredContacts.map(c => <Contacts
+                filteredContacts.map(c => <Contact
                         key={c.id}
                         id={c.id}
                         name={c.name}
@@ -61,4 +54,4 @@ const ContactsContainer = () => {
 
 export default compose<React.ComponentType>(
     withAuthRedirect,
-)(ContactsContainer)
+)(ContactContainer)

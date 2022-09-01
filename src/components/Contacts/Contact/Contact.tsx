@@ -1,12 +1,12 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from "react"
-import s from './Contacts.module.css'
-import {EditableSpan} from "../EditableSpan/EditableSpan";
-import {useAppDispatch} from "../../state/hooks";
+import s from './Contact.module.css'
+import {EditableSpan} from "../../EditableSpan/EditableSpan";
+import {useAppDispatch} from "../../../state/hooks";
 import {
     ChangeContactAction,
     ChangeEditModeAction,
     DeleteContactAction
-} from "../../state/actions/contacts-actions";
+} from "../../../state/actions/contacts-actions";
 
 type ContactsPropsType = {
     id: string
@@ -16,7 +16,7 @@ type ContactsPropsType = {
     photo: string
 }
 
-export const Contacts = (props: ContactsPropsType) => {
+export const Contact = (props: ContactsPropsType) => {
     const dispatch = useAppDispatch()
     const [name, setName] = useState(props.name)
     const [phone, setPhone] = useState(props.phone)
@@ -84,7 +84,7 @@ export const Contacts = (props: ContactsPropsType) => {
                                   }}/>
                 </div>
             </div>
-            <div className={s.editDeleteWrapper}>
+            <div>
                 {
                     props.editMode ?
                         <button className={s.confirmContactButton} onClick={() => {

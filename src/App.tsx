@@ -3,7 +3,7 @@ import {Routes, Route} from 'react-router-dom';
 import './App.css'
 import {LoginContainer} from "./components/Login/LoginContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
-import ContactsContainer from "./components/Contacts/ContactsContainer";
+import ContactsContainer from "./components/Contacts/ContactContainer";
 
 export const App = () => {
 

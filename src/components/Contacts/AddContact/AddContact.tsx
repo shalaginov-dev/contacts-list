@@ -1,7 +1,7 @@
 import s from "./AddContact.module.css";
 import React, {ChangeEvent, KeyboardEvent, useState} from "react";
-import {useAppDispatch} from "../../state/hooks";
-import {AddContactAction} from "../../state/actions/contacts-actions";
+import {useAppDispatch} from "../../../state/hooks";
+import {AddContactAction} from "../../../state/actions/contacts-actions";
 
 export const AddContact = () => {
     const dispatch = useAppDispatch()
